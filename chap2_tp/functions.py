@@ -1,8 +1,8 @@
 import pickle
 import random
 
-from donee import FILE_NAME
-from donee import LIST_MOT
+from chap2_tp.done import FILE_NAME
+from chap2_tp.done import LIST_MOT
 import os.path
 
 # function nead for file manage
@@ -16,7 +16,6 @@ def get_score(name):
             try:
                 scores_dict = mon_deckle.load()
             except:
-                #TODO:fix it
                 pass
         return scores_dict.get(name, 0)
     else:
@@ -34,7 +33,6 @@ def set_score(name, score=0):
             try:
                 scores_dict = mon_deckle.load()
             except:
-                # TODO:fix it
                 pass
         scores_dict[name] = score
         with open(FILE_NAME, 'wb') as f:
